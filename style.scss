@@ -1,0 +1,238 @@
+.frame {
+  background: #2a4480;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  margin-top: -200px;
+  margin-left: -200px;
+  top: 50%;
+  left: 50%;
+  border-radius: 3px;
+  box-shadow: 1px 2px 20px rgba(0,0,0,0.3);
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+}
+
+.center {
+  position: absolute;
+  top: 50px;
+  // left: 200px;
+  left: 50px;
+  background: white;
+  width: 300px;
+  height: 300px;
+  border-radius: 3px;
+  box-shadow: 5px 10px 15px 10px rgba(0,0,0,0.3);
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu {
+  background: #1d7373;
+  position: absolute;
+  top: 75px;
+  left: 50px;
+  height: 250px;
+  width: 200px;
+  border-radius: 3px;
+  color: #abdbdb;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+
+  .square {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    margin-right: 10px;
+    height: 5px;
+    width: 5px;
+    border: 1px solid #abdbdb;
+  }
+
+  ul {
+    margin-top: 5px;
+    line-height: 3;
+    padding: 0;
+
+    li {
+      padding-left: 30px;
+      list-style: none;
+
+      &:hover {
+        cursor: pointer;
+        color: white;
+        background: #2a4480;
+
+        .square {
+          border: white 1px solid;
+        }
+      }
+    }
+  }
+}
+
+.menu-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+
+  &:hover {
+    .circle,
+    .dash-bottom,
+    .dash-top {
+      cursor: pointer;
+      background: white;
+    }
+  }
+
+  .circle {
+    position: relative;
+    top: 17px;
+    left: 30px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #abdbdb;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .dash-top {
+    margin: 10px;
+    height: 3px;
+    width: 18px;
+    background: #abdbdb;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .dash-bottom {
+    @extend .dash-top;
+    top: auto;
+    width: 30px;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.search-button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 6px;
+  border: 2px solid #abdbdb;
+
+  &:hover {
+    border: 2px solid white;
+    cursor: pointer;
+  }
+}
+
+.search-bar {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  height: 30px;
+  width: 215px;
+  border-radius: 20px;
+  font-size: 16px;
+  padding-left: 10px;
+  border-style: none;
+  display: none;
+}
+
+.notifications {
+  background: #009999;
+  height: 60px;
+
+  .header {
+    background: #009999;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    font-weight: 600;
+  }
+}
+
+.main {
+  margin-top: 10px;
+  overflow: hidden;
+
+  .message-box {
+    position: relative;
+    top: auto;
+    left: 10px;
+
+    &:hover {
+      cursor: pointer;
+      color: #009999;
+    }
+  }
+
+  .line {
+    position: absolute;
+    left: 23px;
+    height: 80%;
+    width: 3px;
+    background: #ddd;
+  }
+
+  .circle {
+    position: relative;
+    top: 13px;
+    left: 7px;
+    width: 14px;
+    height: 16px;
+    background: white;
+
+    .circle-outline {
+      position: relative;
+      top: 2px;
+      width: 8px;
+      height: 8px;
+      border: 2px solid #009999;
+      border-radius: 50%;
+      background: white;
+      margin: 2px;
+    }
+  }
+
+  .time {
+    position: relative;
+    left: 25px;
+    top: -3px;
+    font-size: 12px;
+    list-style: circle;
+  }
+
+  .message {
+    margin: 0 30px;
+    font-size: 16px;
+    list-style: none;
+
+    .name {
+      font-weight: 600;
+    }
+  }
+}
+@keyframes appear {
+  from {
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
