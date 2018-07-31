@@ -15,7 +15,7 @@ function handleError (error) {
 gulp.task('browserSync', () => {
   browserSync.init({
     server: {
-      baseDir: 'public'
+      baseDir: 'docs/'
     }
   });
 });
@@ -29,7 +29,7 @@ gulp.task('html', () => {
       collapseWhitespace: true
     }
   }))
-  .pipe(gulp.dest('public/'))
+  .pipe(gulp.dest('docs/'))
   .pipe(browserSync.reload({
     stream: true
   }));
@@ -43,7 +43,7 @@ gulp.task('css', () => {
     minify: true,
     minifyCSS: true
   }))
-  .pipe(gulp.dest('public/'))
+  .pipe(gulp.dest('docs/'))
   .pipe(browserSync.reload({
     stream: true
   }));
@@ -56,7 +56,7 @@ gulp.task('js', () => {
     minify: true,
     minifyJS: true
   }))
-  .pipe(gulp.dest('public/'))
+  .pipe(gulp.dest('docs/'))
   .pipe(browserSync.reload({
     stream: true
   }));
